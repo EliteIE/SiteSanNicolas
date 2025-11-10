@@ -1,0 +1,621 @@
+/* Estilos CSS para la Landing Page San Nicolas (Versión Impresionante) */
+
+/* Variáveis de Cores */
+:root {
+    --primary-color: #004A99; /* Azul Institucional Profundo */
+    --secondary-color: #00AEEF; /* Azul Claro/Destaque Vibrante */
+    --text-color: #222222;
+    --light-text-color: #FFFFFF;
+    --background-light: #F8F8F8;
+    --background-dark: #003366;
+    --cta-color: #FF6600; /* Laranja para CTAs de Alto Contraste */
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3em;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.6em;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Botones CTA */
+.cta-button {
+    display: block;
+    padding: 18px 35px;
+    margin: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px; /* Botones más modernos */
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.primary-cta {
+    background-color: var(--cta-color);
+    color: var(--light-text-color);
+    font-size: 1.3em;
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.4);
+}
+
+.primary-cta:hover {
+    background-color: #E65C00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.6);
+}
+
+.secondary-cta {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    font-size: 1.1em;
+}
+
+.secondary-cta:hover {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+/* 1. Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--background-light) 0%, #E0F0FF 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    justify-content: space-between;
+    text-align: left;
+}
+
+.hero-content-wrapper { /* Novo wrapper para o conteúdo principal e a imagem */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hero-text-area { /* Novo wrapper para H1 e P */
+    flex: 1;
+    min-width: 350px;
+    max-width: 50%; /* Limita a largura para que o texto não fique muito longo */
+    padding-right: 50px;
+}
+
+.hero-content { /* Onde estava o H1 e P, agora só o formulário */
+    flex: 1;
+    min-width: 350px;
+    max-width: 45%; /* Garante que o formulário tenha espaço */
+    padding-right: 0;
+}
+
+.logo {
+    width: 100%; /* Garante que o logo ocupe a linha toda */
+    margin-bottom: 30px;
+}
+
+.logo img {
+    max-width: 250px;
+    margin-bottom: 0;
+}
+
+.sub-headline {
+    font-size: 1.3em;
+    color: #555;
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.cta-box {
+    background-color: var(--light-text-color);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-top: 0; /* Remove a margem superior desnecessária */
+    border-top: 5px solid var(--secondary-color);
+}
+
+.cta-box h2 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: var(--cta-color);
+    text-align: center;
+}
+
+.cta-box h2::after {
+    display: none;
+}
+
+.cta-box input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.hero-image-placeholder {
+    flex: 1;
+    min-width: 350px;
+    height: 450px;
+    background-color: #CCCCCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-style: italic;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-top: 20px;
+}
+
+/* 2. Propuesta de Valor */
+.propuesta-valor {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+    padding: 60px 0;
+}
+
+.propuesta-valor h2 {
+    color: var(--secondary-color);
+}
+
+.propuesta-valor h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.propuesta-valor .content-wrapper {
+    display: flex;
+    gap: 50px;
+}
+
+.propuesta-valor .problema,
+.propuesta-valor .solucion {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* 3. Pilares de Cuidado */
+.pilares-cuidado {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.pilar-item {
+    background-color: var(--light-text-color);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--primary-color);
+}
+
+.pilar-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.pilar-item img {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+}
+
+.pilar-item h3 {
+    color: var(--primary-color);
+}
+
+/* 4. Detalle de Beneficios */
+.detalhe-beneficios {
+    background-color: var(--background-light);
+    padding: 60px 0;
+}
+
+.beneficio-bloco {
+    background-color: var(--light-text-color);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-light);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.beneficio-bloco h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.beneficio-bloco ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.beneficio-bloco ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.05em;
+}
+
+.beneficio-bloco ul li:last-child {
+    border-bottom: none;
+}
+
+.grid-servicios, .grid-produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.grid-servicios h4, .grid-produtos h4 {
+    color: var(--secondary-color);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* 5. Seções de Destaque (Peluquería e Mueblería) */
+.destaque-section {
+    padding: 80px 0;
+}
+
+.peluqueria-destaque {
+    background-color: var(--background-light);
+}
+
+.muebleria-destaque {
+    background-color: var(--background-dark);
+    color: var(--light-text-color);
+}
+
+.destaque-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+}
+
+.destaque-section h2 {
+    color: var(--primary-color);
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.muebleria-destaque h2 {
+    color: var(--secondary-color);
+}
+
+.destaque-section h2::after {
+    margin: 10px 0 0 0;
+}
+
+.destaque-section .content-wrapper {
+    flex: 1;
+    min-width: 300px;
+}
+
+.destaque-image-placeholder {
+    flex: 1;
+    min-width: 300px;
+    height: 400px;
+    background-color: #CCCCCC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-style: italic;
+    border-radius: 12px;
+    box-shadow: var(--shadow-hover);
+}
+
+.muebleria-destaque .destaque-image-placeholder {
+    order: 1;
+}
+
+.muebleria-destaque .content-wrapper {
+    order: 2;
+}
+
+.peluqueria-destaque .destaque-image-placeholder {
+    order: 2;
+}
+
+.peluqueria-destaque .content-wrapper {
+    order: 1;
+}
+
+.destaque-section ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.destaque-section ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    padding-left: 25px;
+    position: relative;
+}
+
+.destaque-section ul li::before {
+    content: '✔';
+    color: var(--cta-color);
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+}
+
+/* 7. Prueba Social */
+.prueba-social {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--light-text-color);
+}
+
+.depoimentos-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.depoimento-item {
+    flex: 1;
+    max-width: 450px;
+    background-color: var(--background-light);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+    border-top: 4px solid var(--secondary-color);
+}
+
+.depoimento-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    background-color: #ccc;
+    border: 3px solid var(--secondary-color);
+}
+
+.numeros-impacto {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--cta-color);
+    margin-bottom: 40px;
+}
+
+/* 8. CTA Final */
+.cta-final {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cta-final h2 {
+    color: var(--light-text-color);
+}
+
+.cta-box-final {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.cta-box-final input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #aaa;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-info {
+    flex: 2;
+    min-width: 300px;
+}
+
+.footer-info ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.footer-info ul li {
+    margin-bottom: 5px;
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 200px;
+    text-align: right;
+}
+
+.footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text-area {
+        padding-right: 0;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .hero-image-placeholder {
+        order: 1;
+        margin-bottom: 30px;
+    }
+
+    .propuesta-valor .content-wrapper {
+        flex-direction: column;
+    }
+
+    .depoimentos-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .depoimento-item {
+        max-width: 100%;
+    }
+
+    .destaque-section .container {
+        flex-direction: column;
+    }
+
+    .peluqueria-destaque .destaque-image-placeholder {
+        order: 1;
+    }
+
+    .peluqueria-destaque .content-wrapper {
+        order: 2;
+    }
+
+    .muebleria-destaque .destaque-image-placeholder {
+        order: 1;
+    }
+
+    .muebleria-destaque .content-wrapper {
+        order: 2;
+    }
+
+    .destaque-section h2 {
+        text-align: center;
+    }
+
+    .footer-links {
+        text-align: left;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .grid-servicios, .grid-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button {
+        font-size: 1.1em;
+        padding: 15px 20px;
+    }
+}
