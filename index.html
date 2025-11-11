@@ -9,8 +9,31 @@
 </head>
 <body>
 
+    <!-- NOVO HEADER FIXO -->
+    <nav class="main-header">
+        <div class="container header-content">
+            <div class="logo-header">
+                <img src="placeholder_logo.png" alt="San Nicolas - Con tu familia siempre">
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#pilares">Nuestros Servicios</a></li>
+                <li><a href="#peluqueria">Peluquería</a></li>
+                <li><a href="#muebleria">Mueblería</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto" class="cta-nav">Afíliate Ahora</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- FIM DO NOVO HEADER FIXO -->
+
     <!-- 1. Hero (Encabezado) -->
-    <header class="hero-section">
+    <header class="hero-section" id="inicio">
         <div class="container">
             <div class="logo">
                 <!-- Placeholder para el Logo -->
@@ -63,7 +86,7 @@
     </section>
 
     <!-- 3. Pilares de Cuidado -->
-    <section class="pilares-cuidado">
+    <section class="pilares-cuidado" id="pilares">
         <div class="container">
             <h2>Nuestros Pilares de Cuidado: Beneficios que Transforman tu Día a Día.</h2>
             <div class="pilares-grid">
@@ -140,7 +163,7 @@
     </section>
 
     <!-- 5. Peluquería Destaque (NOVA SEÇÃO) -->
-    <section class="peluqueria-destaque destaque-section">
+    <section class="peluqueria-destaque destaque-section" id="peluqueria">
         <div class="container">
             <div class="destaque-image-placeholder">
                 <p>IMAGEN DE ALTA CALIDAD: Interior moderno de la Peluquería o un corte de cabello profesional.</p>
@@ -159,7 +182,7 @@
     </section>
 
     <!-- 6. Mueblería Destaque -->
-    <section class="muebleria-destaque destaque-section">
+    <section class="muebleria-destaque destaque-section" id="muebleria">
         <div class="container">
             <div class="destaque-image-placeholder">
                 <p>IMAGEN DE ALTA CALIDAD: Sala de estar o dormitorio con muebles modernos de la Mueblería.</p>
@@ -178,7 +201,7 @@
     </section>
 
     <!-- 7. Prueba Social -->
-    <section class="prueba-social">
+    <section class="prueba-social" id="testimonios">
         <div class="container">
             <h2>La Confianza de Cientos de Familias en La Rioja.</h2>
             <div class="depoimentos-grid">
@@ -201,7 +224,7 @@
     </section>
 
     <!-- 8. CTA Final y Contacto -->
-    <section class="cta-final">
+    <section class="cta-final" id="contacto">
         <div class="container">
             <h2>No Dejes la Seguridad de tu Familia para Mañana.</h2>
             <p>Completa el formulario y uno de nuestros consultores te contactará de inmediato para presentarte el plan de afiliación ideal para ti.</p>
@@ -246,6 +269,20 @@
 
         document.getElementById('afiliacion-form').addEventListener('submit', formSubmit);
         document.getElementById('afiliacao-form-final').addEventListener('submit', formSubmit);
+
+        // Lógica para el menú hamburguesa
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link (para mobile)
+        document.querySelectorAll('.nav-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
